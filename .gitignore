@@ -46,3 +46,7 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+
+#3D assets
+Assets/Resources/3D/*
