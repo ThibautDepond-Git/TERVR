@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class IdleControl : MonoBehaviour
 {
 
     public Animator anim;
@@ -18,6 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (Input.GetKey("space"))
         {
             anim.SetBool("boule", true);
+            FindObjectOfType<AudioManager>().Play("Hello");
         }
         else
         {
