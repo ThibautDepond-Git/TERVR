@@ -7,8 +7,8 @@ public class StartScenario : MonoBehaviour
 
     public int scenarioId;
     // Start is called before the first frame update
-    void Start()
+    public void StartDialog()
     {
-           
+        FindObjectOfType<DialogManager>().StartDialog();
     }
 }

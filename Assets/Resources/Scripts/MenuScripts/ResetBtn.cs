@@ -6,6 +6,6 @@ public class ResetBtn : MonoBehaviour
 {
     public void ResetIsTriggered()
     {
-        FindObjectOfType<DialogManager>().StartDialog();
+        FindObjectOfType<AudioManager>().Play("NI");
     }
 }

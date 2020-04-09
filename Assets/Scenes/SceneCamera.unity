@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44387424, g: 0.49324328, b: 0.572742, a: 1}
+  m_IndirectSpecularColor: {r: 0.44387475, g: 0.49324423, b: 0.57274324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 133268297}
   - component: {fileID: 133268296}
   - component: {fileID: 133268299}
+  - component: {fileID: 133268300}
   m_Layer: 0
   m_Name: Fond
   m_TagString: Untagged
@@ -403,6 +404,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioId: 4
+--- !u!114 &133268300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133268294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 989153001}
+          m_MethodName: StartDialog
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &226058582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,6 +1667,7 @@ GameObject:
   - component: {fileID: 792744197}
   - component: {fileID: 792744196}
   - component: {fileID: 792744199}
+  - component: {fileID: 792744200}
   m_Layer: 0
   m_Name: Fond
   m_TagString: Untagged
@@ -1732,6 +1762,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioId: 2
+--- !u!114 &792744200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792744194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 989153001}
+          m_MethodName: StartDialog
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &922388431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1834,7 @@ GameObject:
   - component: {fileID: 989152999}
   - component: {fileID: 989152998}
   - component: {fileID: 989153001}
+  - component: {fileID: 989153002}
   m_Layer: 0
   m_Name: Fond
   m_TagString: Untagged
@@ -1870,6 +1929,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioId: 1
+--- !u!114 &989153002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989152996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 989153001}
+          m_MethodName: StartDialog
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1043980863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,6 +2234,11 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
+  - name: NI
+    clip: {fileID: 8300000, guid: 195df17e037bd34488f6f2a06f4374b4, type: 3}
+    volume: 0.5
+    pitch: 0.7
+    source: {fileID: 0}
 --- !u!4 &1487349444
 Transform:
   m_ObjectHideFlags: 0
@@ -2386,6 +2478,7 @@ GameObject:
   - component: {fileID: 1688694077}
   - component: {fileID: 1688694076}
   - component: {fileID: 1688694079}
+  - component: {fileID: 1688694080}
   m_Layer: 0
   m_Name: Fond
   m_TagString: Untagged
@@ -2480,6 +2573,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioId: 3
+--- !u!114 &1688694080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688694074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 989153001}
+          m_MethodName: StartDialog
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1697926613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2683,7 +2804,7 @@ Transform:
   m_Children:
   - {fileID: 647035535}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1827868756 stripped
 Transform:
@@ -2749,8 +2870,11 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: [{fileID: 551809357}, {fileID: 2071466338}, {fileID: 1838532345}, {
-      fileID: 371633533}]
+  m_Children:
+  - {fileID: 551809357}
+  - {fileID: 2071466338}
+  - {fileID: 1838532345}
+  - {fileID: 371633533}
   m_Father: {fileID: 111469780}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
