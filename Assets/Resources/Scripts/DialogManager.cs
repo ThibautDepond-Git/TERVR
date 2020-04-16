@@ -6,12 +6,15 @@ using UnityEngine;
 public class DialogManager : MonoBehaviour
 {
     bool playing;
-    Queue<String> queue;
+    Queue<String> soundQueue;
+    Queue<int> npcQueue;
     public GameObject[] from;
+    public AudioManager audioManager;
 
     public void Start()
     {
-        queue = new Queue<String>();
+        soundQueue = new Queue<String>();
+        npcQueue = new Queue<int>();
         playing = false;
     }
 
@@ -20,19 +23,31 @@ public class DialogManager : MonoBehaviour
         //TODO interrompre dialogue en cours
         if (playing) return;
 
-        queue.Clear();
-        queue.Enqueue("dialogue_test_1");
-        queue.Enqueue("dialogue_test_2");
-        queue.Enqueue("dialogue_test_3");
-        queue.Enqueue("dialogue_test_4");
+        ClearQueues();
+        Enqueue("dialogue_test_1", 0);
+        Enqueue("dialogue_test_2", 1);
+        Enqueue("dialogue_test_3", 0);
+        Enqueue("dialogue_test_4", 1);
 
         playing = true;
         PlayNext();
     }
 
+    private void ClearQueues()
+    {
+        soundQueue.Clear();
+        npcQueue.Clear();
+    }
+
+    private void Enqueue(String sound, int npc)
+    {
+        soundQueue.Enqueue(sound);
+        npcQueue.Enqueue(npc);
+    }
+
     private void PlayNext()
     {
-        float time = FindObjectOfType<AudioManager>().PlayFrom(queue.Dequeue(), from[1]);
+        float time = audioManager.PlayFrom(soundQueue.Dequeue(), from[npcQueue.Dequeue()]);
         StartCoroutine(WaitForNext(time));
     }
 
@@ -41,7 +56,7 @@ public class DialogManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         if (playing)
         {
-            if (queue.Count > 0) PlayNext();
+            if (soundQueue.Count > 0) PlayNext();
             else playing = false;
         }
     }
