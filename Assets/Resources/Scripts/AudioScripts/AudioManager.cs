@@ -32,4 +32,12 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
         return s.clip.length;
     }
+
+    public float PlayFrom(string name, GameObject game)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        AudioSource.PlayClipAtPoint(s.clip, game.GetComponent<Transform>().position);
+
+        return s.clip.length;
+    }
 }

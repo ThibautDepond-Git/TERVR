@@ -7,6 +7,7 @@ public class DialogManager : MonoBehaviour
 {
     bool playing;
     Queue<String> queue;
+    public GameObject[] from;
 
     public void Start()
     {
@@ -31,7 +32,7 @@ public class DialogManager : MonoBehaviour
 
     private void PlayNext()
     {
-        float time = FindObjectOfType<AudioManager>().Play(queue.Dequeue());
+        float time = FindObjectOfType<AudioManager>().PlayFrom(queue.Dequeue(), from[1]);
         StartCoroutine(WaitForNext(time));
     }
 
