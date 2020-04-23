@@ -7,7 +7,7 @@
   * Fixe l'utilisateur
   * Esquive le regard de l'utilisateur
   * Regarde l'utilisateur de temps en temps
-* Arrivée de l'utilisateur : **au début ? pendant la convesartion ? (à déterminer)**
+* Arrivée de l'utilisateur : **au début ? pendant la conversation ? (à déterminer)**
 * Interventions de l'utilisateur : **à determiner**
 
 Scénario de la conversation : personnage 1 demande à personnage 2 de l'aide pour son site internet avec Vue.js, les dépendances maven ont été mal écrites le projet ne s'est pas mis à jour, ils ont perdu les assets importés par Vuex et le site ne ressemble plus à rien
