@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44387475, g: 0.49324423, b: 0.57274324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44387424, g: 0.49324328, b: 0.572742, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2168,22 +2168,22 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: dialogue_test_1
-    clip: {fileID: 8300000, guid: e5aaac4e4a63c504c9c8793626b44c9d, type: 3}
+    clip: {fileID: 8300000, guid: 76de29ee7c17cc44ebcfef068486f8df, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: dialogue_test_2
-    clip: {fileID: 8300000, guid: 5cb21711d65a5bc44bd6c65d14e925e9, type: 3}
+    clip: {fileID: 8300000, guid: 9953108f215586744a961bc5d3e75882, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: dialogue_test_3
-    clip: {fileID: 8300000, guid: f81fc6eb3229b56469fd0b279a115eb9, type: 3}
+    clip: {fileID: 8300000, guid: 85b8d2ec0ab37744e95aa0c8b741bf15, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: dialogue_test_4
-    clip: {fileID: 8300000, guid: 2bae1504f687e284ba0830a3133e364b, type: 3}
+    clip: {fileID: 8300000, guid: 081e4c33ebc7d2d4db12a2692a897694, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
