@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneCamera.unity
     guid: e01aa38eb771ee441ba40074b1fb335b
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: aa62c483c6761ee4f91844fa9d55f975,
+      type: 2}
