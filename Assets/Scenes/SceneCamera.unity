@@ -743,7 +743,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129346, guid: c50789636e1fc5c4b8a37e2700e4a3c1, type: 3}
       propertyPath: m_Name
-      value: SM_Env_Tree_03 (1)
+      value: SM_Env_Tree_03 (gregory)
       objectReference: {fileID: 0}
     - target: {fileID: 427308, guid: c50789636e1fc5c4b8a37e2700e4a3c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1712,7 +1712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922388431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -6}
+  m_LocalPosition: {x: 0, y: 1.5, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1590757360}
@@ -2116,7 +2116,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129346, guid: c50789636e1fc5c4b8a37e2700e4a3c1, type: 3}
       propertyPath: m_Name
-      value: SM_Env_Tree_03
+      value: SM_Env_Tree_03 (adriano)
       objectReference: {fileID: 0}
     - target: {fileID: 427308, guid: c50789636e1fc5c4b8a37e2700e4a3c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2210,22 +2210,22 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: dialogue_test_1
-    clip: {fileID: 8300000, guid: e5aaac4e4a63c504c9c8793626b44c9d, type: 3}
+    clip: {fileID: 8300000, guid: 76de29ee7c17cc44ebcfef068486f8df, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: dialogue_test_2
-    clip: {fileID: 8300000, guid: 5cb21711d65a5bc44bd6c65d14e925e9, type: 3}
+    clip: {fileID: 8300000, guid: 9953108f215586744a961bc5d3e75882, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: dialogue_test_3
-    clip: {fileID: 8300000, guid: f81fc6eb3229b56469fd0b279a115eb9, type: 3}
+    clip: {fileID: 8300000, guid: 85b8d2ec0ab37744e95aa0c8b741bf15, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: dialogue_test_4
-    clip: {fileID: 8300000, guid: 2bae1504f687e284ba0830a3133e364b, type: 3}
+    clip: {fileID: 8300000, guid: 081e4c33ebc7d2d4db12a2692a897694, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
