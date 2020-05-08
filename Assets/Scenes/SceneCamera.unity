@@ -475,7 +475,9 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Bip01 Head'\n\tFrom animation clip 'TestAnimTete'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -1906,6 +1908,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400132, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.069265135
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00000003000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: c211ea398c32e4b46a3880399b48413e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
