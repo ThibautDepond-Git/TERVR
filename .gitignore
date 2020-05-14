@@ -52,3 +52,6 @@ crashlytics-build.properties
 Assets/Resources/3D/*
 Assets/Resources/3DAssets/*
 Assets/GoogleVR
+
+#Logs
+Assets/Resources/log.*

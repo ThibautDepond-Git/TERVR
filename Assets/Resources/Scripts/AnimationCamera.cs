@@ -6,17 +6,22 @@ public class AnimationCamera : MonoBehaviour
 {
 		public Transform player;
 		public Transform NPC;
+    public Log logger;
 
 
     public void startAnimation(){
     	GetComponent<Animator>().SetBool("boule", false);
         FindObjectOfType<AudioManager>().Play("Hello");
-        transform.LookAt(player.transform.position);
-        transform.SetPositionAndRotation(transform.position, new Quaternion(0, transform.rotation.y, 0, transform.rotation.w));
+        //transform.LookAt(player.transform.position);
+        //transform.SetPositionAndRotation(transform.position, new Quaternion(0, transform.rotation.y, 0, transform.rotation.w));
+
+        logger.logStartWatch(NPC);
     }
 
     public void endAnimation(){
     	GetComponent<Animator>().SetBool("boule", true);
-    	transform.LookAt(NPC.transform.position);
+        //transform.LookAt(NPC.transform.position);
+
+        logger.logEndWatch(NPC);
     }
 }
