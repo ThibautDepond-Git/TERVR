@@ -1,0 +1,1 @@
+﻿public enum NpcLookInteractions { WhenLooked, Never, Always, WhenNotLooked };

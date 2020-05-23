@@ -37,7 +37,6 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         AudioSource.PlayClipAtPoint(s.clip, game.GetComponent<Transform>().position);
-
         return s.clip.length;
     }
 }

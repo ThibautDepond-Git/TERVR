@@ -10,6 +10,7 @@ public class DialogManager : MonoBehaviour
     Queue<int> npcQueue;
     public GameObject[] from;
     public AudioManager audioManager;
+    int currentNpc;
 
     public void Start()
     {
@@ -47,7 +48,9 @@ public class DialogManager : MonoBehaviour
 
     private void PlayNext()
     {
-        float time = audioManager.PlayFrom(soundQueue.Dequeue(), from[npcQueue.Dequeue()]);
+        currentNpc = npcQueue.Dequeue();
+        from[currentNpc].GetComponentInChildren<Animator>().SetBool("talking", true);
+        float time = audioManager.PlayFrom(soundQueue.Dequeue(), from[currentNpc]);
         StartCoroutine(WaitForNext(time));
     }
 
@@ -56,8 +59,12 @@ public class DialogManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         if (playing)
         {
-            if (soundQueue.Count > 0) PlayNext();
-            else playing = false;
+            from[currentNpc].GetComponentInChildren<Animator>().SetBool("talking", false);
+            if (soundQueue.Count > 0)
+            {
+                PlayNext();
+
+            } else playing = false;
         }
     }
 }
