@@ -79,4 +79,10 @@ public class DialogManager : MonoBehaviour
             } else playing = false;
         }
     }
+
+    public void Stop()
+    {
+        ClearQueues();
+        audioManager.Stop();
+    }
 }

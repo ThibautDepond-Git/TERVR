@@ -6,6 +6,7 @@ public class StartScenario : MonoBehaviour
 {
 
     private NpcLookInteractions choosedNpcLookInteraction;
+    public DialogManager dialogManager;
     public void StartDialog(int scNb)
     {
         switch (scNb)
@@ -42,6 +43,6 @@ public class StartScenario : MonoBehaviour
 
     public void resetDialog()
     {
-        
+        dialogManager.Stop();
     }
 }
