@@ -11,9 +11,7 @@ public class NpcCameraInteraction : MonoBehaviour
     private NpcLookInteractions npcLookAtPlayer;
     public StartScenario menu;
     Animator animator;
-
-    float smoother = 3f;
-    float lookWeight = 0f;
+    public GameObject focus;
 
     public void Start()
     {
@@ -37,42 +35,39 @@ public class NpcCameraInteraction : MonoBehaviour
 
     private void OnAnimatorIK()
     {
-        animator.SetLookAtWeight(lookWeight);
+        animator.SetLookAtWeight(1);
+        animator.SetLookAtPosition(focus.GetComponent<Transform>().position);
+
 
         switch (npcLookAtPlayer)
         {
             case NpcLookInteractions.WhenLooked:
                 {
                     if (animator.GetBool("looked")){
-                        animator.SetLookAtPosition(player.position);
-                        lookWeight = Mathf.Lerp(lookWeight, 1f, Time.deltaTime * smoother);
+                        
+                        focus.GetComponent<focusScript>().MoveTo(player);
                     } else {
-                        lookWeight = Mathf.Lerp(lookWeight, 0.2f, Time.deltaTime * smoother);
-                        animator.SetLookAtPosition(NPC.position);
-                        lookWeight = Mathf.Lerp(lookWeight, 1f, Time.deltaTime * smoother);
+                        focus.GetComponent<focusScript>().MoveTo(NPC);
                     }
                     break;
                 }
             case NpcLookInteractions.WhenNotLooked:
                 {
                     if (animator.GetBool("looked")) {
-                        animator.SetLookAtPosition(NPC.position);
-                        lookWeight = Mathf.Lerp(lookWeight, 1f, Time.deltaTime * smoother);
+                        focus.GetComponent<focusScript>().MoveTo(NPC);
                     } else {
-                        lookWeight = Mathf.Lerp(lookWeight, 0.2f, Time.deltaTime * smoother);
-                        animator.SetLookAtPosition(player.position);
-                        lookWeight = Mathf.Lerp(lookWeight, 1f, Time.deltaTime * smoother);
+                        focus.GetComponent<focusScript>().MoveTo(player);
                     }
                     break;
                 }
             case NpcLookInteractions.Never:
                 {
-                    animator.SetLookAtPosition(NPC.position);
+                    focus.GetComponent<focusScript>().MoveTo(NPC);
                     break;
                 }
             case NpcLookInteractions.Always:
                 {
-                    animator.SetLookAtPosition(player.position);
+                    focus.GetComponent<focusScript>().MoveTo(player);
                     break;
                 }
         }
