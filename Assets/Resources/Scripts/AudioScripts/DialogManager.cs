@@ -25,10 +25,22 @@ public class DialogManager : MonoBehaviour
         if (playing) return;
 
         ClearQueues();
-        Enqueue("dialogue_test_1", 0);
-        Enqueue("dialogue_test_2", 1);
-        Enqueue("dialogue_test_3", 0);
-        Enqueue("dialogue_test_4", 1);
+        Enqueue("1", 0);
+        Enqueue("2", 1);
+        Enqueue("3", 0);
+        Enqueue("4", 1);
+        Enqueue("5", 0);
+        Enqueue("6", 1);
+        Enqueue("7", 0);
+        Enqueue("8", 1);
+        Enqueue("9", 0);
+        Enqueue("10", 1);
+        Enqueue("11", 0);
+        Enqueue("12", 1);
+        Enqueue("13", 0);
+        Enqueue("14", 1);
+        Enqueue("15", 0);
+        Enqueue("16", 1);
 
         playing = true;
         PlayNext();

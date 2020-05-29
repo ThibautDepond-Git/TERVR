@@ -39,4 +39,9 @@ public class StartScenario : MonoBehaviour
     {
         return choosedNpcLookInteraction;
     }
+
+    public void resetDialog()
+    {
+        
+    }
 }
