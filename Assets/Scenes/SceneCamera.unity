@@ -352,7 +352,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232046722}
-  m_Text: "Quand vous ne \nles regardez pas"
+  m_Text: 'Quand vous
+
+    les regardez'
   m_OffsetZ: 0
   m_CharacterSize: 0.02
   m_LineSpacing: 1
@@ -1084,7 +1086,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395377687}
-  m_Text: "Quand vous \nles regardez"
+  m_Text: 'Quand vous ne
+
+    les regardez pas'
   m_OffsetZ: 0
   m_CharacterSize: 0.02
   m_LineSpacing: 1
@@ -1288,7 +1292,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 0.2627451, g: 0.30588236, b: 0.38431376, a: 1}
     m_HighlightedColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
@@ -1482,6 +1486,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 735834777}
+  audioManager: {fileID: 1487349443}
+  logger: {fileID: 1418573741}
 --- !u!1 &662383575 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100218, guid: fe7bdf2960f7283419936da4cddbf420,
@@ -2329,7 +2335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88dc9e19bd8bf2f42ac5f30b825ec939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: Assets/Resources/log.txt
+  path: Assets/Resources/Log
 --- !u!4 &1418573742
 Transform:
   m_ObjectHideFlags: 0
@@ -2469,117 +2475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3430d8c3c54b7674587ad9bb3c706b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: Hello
-    clip: {fileID: 8300000, guid: 7285f02023f85054baf00895ddb6fc4e, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: dialogue_test_1
-    clip: {fileID: 8300000, guid: 76de29ee7c17cc44ebcfef068486f8df, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: dialogue_test_2
-    clip: {fileID: 8300000, guid: 9953108f215586744a961bc5d3e75882, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: dialogue_test_3
-    clip: {fileID: 8300000, guid: 85b8d2ec0ab37744e95aa0c8b741bf15, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: dialogue_test_4
-    clip: {fileID: 8300000, guid: 081e4c33ebc7d2d4db12a2692a897694, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: NI
-    clip: {fileID: 8300000, guid: 195df17e037bd34488f6f2a06f4374b4, type: 3}
-    volume: 0.5
-    pitch: 0.7
-    source: {fileID: 0}
-  - name: 1
-    clip: {fileID: 8300000, guid: 37a289aed3fa8f94c9654f3114cd35ce, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 2
-    clip: {fileID: 8300000, guid: 061fc76628e5a124cbbe998d27522240, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 3
-    clip: {fileID: 8300000, guid: ee5d6a3d5663574468cadf14de3100ba, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 4
-    clip: {fileID: 8300000, guid: 1c54699681b35cb4b9aa9e60ca5c34b5, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 5
-    clip: {fileID: 8300000, guid: c3cf53b1f350a304bb0644951eb6ade3, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 6
-    clip: {fileID: 8300000, guid: c6584e05f6cef3f43a0ae5ee6f6513c1, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 7
-    clip: {fileID: 8300000, guid: ebe36a92e45407b4cae361a07937a8f6, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 8
-    clip: {fileID: 8300000, guid: 609b5407012b84a4e9a9f969174a0f1f, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 9
-    clip: {fileID: 8300000, guid: efb485803e5b70f4fb0dea76745985b8, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 10
-    clip: {fileID: 8300000, guid: daf7a80a5999b3448a5a86b8e27c5400, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 11
-    clip: {fileID: 8300000, guid: 53f5d4c5178c8214ebcdada11d9a0b2f, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 12
-    clip: {fileID: 8300000, guid: 76815c54f3f9bc4428c5675d56c03f88, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 13
-    clip: {fileID: 8300000, guid: dfdf40b1de9f0ce46b1a43e6dd94e31a, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 14
-    clip: {fileID: 8300000, guid: 5f84446974cfa7045ae4ddb5747b0bb9, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 15
-    clip: {fileID: 8300000, guid: 968be6b4e33a19e4c9d9e8f105baa262, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
-  - name: 16
-    clip: {fileID: 8300000, guid: 34ba3a192c3ab804e8c1ddb7a8db0c20, type: 3}
-    volume: 0.5
-    pitch: 1
-    source: {fileID: 0}
+  sounds: []
 --- !u!4 &1487349444
 Transform:
   m_ObjectHideFlags: 0
@@ -2813,7 +2709,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590757359}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2840,6 +2736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedH: 2
   speedV: 2
+  logger: {fileID: 1418573741}
 --- !u!81 &1590757362
 AudioListener:
   m_ObjectHideFlags: 0

@@ -7,28 +7,52 @@ using UnityEngine;
 public class Log : MonoBehaviour
 {
     public string path;
-    StreamWriter writer;
+    StreamWriter interactionLogWriter;
+    StreamWriter playerHeadMotionLogWriter;
     private DateTime lastStart;
 
     public void Start()
     {
-        writer = new StreamWriter(path, false);
+        interactionLogWriter = new StreamWriter(path+"/interactionLog.txt", false);
+        playerHeadMotionLogWriter = new StreamWriter(path+"/headMotionLog.csv", false);
+        playerHeadMotionLogWriter.WriteLine("degree_X_[up-down];degree_Y_[left-right]");
     }
 
     public void OnDestroy()
     {
-        writer.Close();
+        interactionLogWriter.Close();
+        playerHeadMotionLogWriter.Close();
     }
 
     public void logStartWatch(Transform npc)
     {
         lastStart = DateTime.Now;
-        writer.WriteLine(lastStart + " - Looking at " + npc.name);
+        interactionLogWriter.WriteLine(lastStart + " - [PLAYER] - Looking at " + npc.name);
     }
 
     public void logEndWatch(Transform npc)
     {
         DateTime now = DateTime.Now;
-        writer.WriteLine(now + " - Looked at " + npc.name + " for " + (now - lastStart));
+        interactionLogWriter.WriteLine(now + " - [PLAYER] - Looked at " + npc.name + " for " + (now - lastStart));
+    }
+
+    public void logHeadMotion(Transform player)
+    {
+        playerHeadMotionLogWriter.WriteLine(normalizeAngles(player.rotation.eulerAngles.x) + ";" + normalizeAngles(player.rotation.eulerAngles.y));
+    }
+
+    String normalizeAngles(float angle)
+    {
+        if (angle > 180)
+        {
+            float newAngle = angle - 360;
+            return newAngle.ToString();
+        }
+        return angle.ToString();
+    }
+
+    public void logPressedButton(String button)
+    {
+        interactionLogWriter.WriteLine(DateTime.Now + " - [MENU] - Button : " + button + " has been pressed");
     }
 }

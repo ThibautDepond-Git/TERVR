@@ -54,4 +54,4 @@ Assets/Resources/3DAssets/*
 Assets/GoogleVR
 
 #Logs
-Assets/Resources/log.*
+Assets/Resources/Log/*Log.*

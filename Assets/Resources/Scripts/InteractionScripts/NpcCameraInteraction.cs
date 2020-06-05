@@ -9,7 +9,7 @@ public class NpcCameraInteraction : MonoBehaviour
 	public Transform NPC;
     public Log logger;
     private NpcLookInteractions npcLookAtPlayer;
-    public StartScenario menu;
+    public Menu menu;
     Animator animator;
     public GameObject focus;
 
@@ -25,12 +25,12 @@ public class NpcCameraInteraction : MonoBehaviour
 
     public void startAnimation(){
     	animator.SetBool("looked", true);
-        logger.logStartWatch(NPC);
+        logger.logStartWatch(GetComponent<Transform>());
     }
 
     public void endAnimation(){
     	animator.SetBool("looked", false);
-        logger.logEndWatch(NPC);
+        logger.logEndWatch(GetComponent<Transform>());
     }
 
     private void OnAnimatorIK()

@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartScenario : MonoBehaviour
+public class Menu : MonoBehaviour
 {
 
     private NpcLookInteractions choosedNpcLookInteraction;
+    
     public DialogManager dialogManager;
+    public AudioManager audioManager;
+    public Log logger;
+
     public void StartDialog(int scNb)
     {
         switch (scNb)
@@ -32,7 +36,7 @@ public class StartScenario : MonoBehaviour
                     break;
                 }
         }
-        
+        logger.logPressedButton(choosedNpcLookInteraction.ToString());
         FindObjectOfType<DialogManager>().StartDialog();
     }
 
@@ -44,5 +48,7 @@ public class StartScenario : MonoBehaviour
     public void resetDialog()
     {
         dialogManager.Stop();
+        audioManager.Stop();
+        logger.logPressedButton("Reset");
     }
 }

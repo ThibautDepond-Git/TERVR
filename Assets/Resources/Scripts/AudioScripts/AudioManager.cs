@@ -1,14 +1,30 @@
 ﻿using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour
 {
-
-    public Sound[] sounds;
+    [HideInInspector]
+    public List<Sound> sounds;
     Sound currentSound;
+    AudioSource source;
 
-    // Start is called before the first frame update
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+
+        AudioClip[] clips;
+        clips = Resources.LoadAll<AudioClip>("Audio");
+        foreach (AudioClip c in clips)
+        {
+            Sound s = new Sound(c, source);
+            sounds.Add(s);
+        }
+    }
+
+    // Load the sound
     void Awake()
     {
         foreach (Sound s in sounds)
@@ -28,22 +44,22 @@ public class AudioManager : MonoBehaviour
     
     public float Play(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
+        
+        Sound s = sounds.Find(sound => sound.name == name);
         s.source.Play();
         return s.clip.length;
     }
 
     public float PlayFrom(string name, GameObject game)
     {
-        //Sound s = Array.Find(sounds, sound => sound.name == name);
-        currentSound = Array.Find(sounds, sound => sound.name == name);
+        currentSound = sounds.Find(sound => sound.name == name);
+
         currentSound.source.GetComponent<Transform>().position = game.GetComponent<Transform>().position;
         currentSound.source.clip = currentSound.clip;
         currentSound.source.volume = currentSound.volume;
         currentSound.source.pitch = currentSound.pitch;
 
         currentSound.source.Play();
-        //AudioSource.PlayClipAtPoint(s.clip, game.GetComponent<Transform>().position);
         return currentSound.clip.length;
     }
 
