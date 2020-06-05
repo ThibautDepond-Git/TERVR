@@ -1650,6 +1650,7 @@ MonoBehaviour:
   - {fileID: 1271124862}
   - {fileID: 1043980863}
   audioManager: {fileID: 1487349443}
+  logger: {fileID: 1418573741}
 --- !u!4 &735834778
 Transform:
   m_ObjectHideFlags: 0

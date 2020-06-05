@@ -47,8 +47,8 @@ public class Menu : MonoBehaviour
 
     public void resetDialog()
     {
+        logger.logPressedButton("Reset");
         dialogManager.Stop();
         audioManager.Stop();
-        logger.logPressedButton("Reset");
     }
 }

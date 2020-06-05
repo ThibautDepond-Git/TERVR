@@ -14,12 +14,16 @@ public class Log : MonoBehaviour
     public void Start()
     {
         interactionLogWriter = new StreamWriter(path+"/interactionLog.txt", false);
+        interactionLogWriter.WriteLine(DateTime.Now + " - [SYSTEM] - start");
+
         playerHeadMotionLogWriter = new StreamWriter(path+"/headMotionLog.csv", false);
         playerHeadMotionLogWriter.WriteLine("degree_X_[up-down];degree_Y_[left-right]");
     }
 
     public void OnDestroy()
     {
+        interactionLogWriter.WriteLine(DateTime.Now + " - [SYSTEM] - end");
+
         interactionLogWriter.Close();
         playerHeadMotionLogWriter.Close();
     }
@@ -54,5 +58,10 @@ public class Log : MonoBehaviour
     public void logPressedButton(String button)
     {
         interactionLogWriter.WriteLine(DateTime.Now + " - [MENU] - Button : " + button + " has been pressed");
+    }
+
+    public void log(String msg)
+    {
+        interactionLogWriter.WriteLine(DateTime.Now + msg);
     }
 }

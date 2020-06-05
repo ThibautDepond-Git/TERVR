@@ -8,10 +8,12 @@ public class DialogManager : MonoBehaviour
     bool playing;
     Queue<String> soundQueue;
     Queue<int> npcQueue;
+
     public GameObject[] from;
-    public AudioManager audioManager;
     int currentNpc;
 
+    public AudioManager audioManager;
+    public Log logger;
     public void Start()
     {
         soundQueue = new Queue<String>();
@@ -44,6 +46,7 @@ public class DialogManager : MonoBehaviour
 
         playing = true;
         PlayNext();
+        logger.log(" - [DIALOGMANAGER] - dialog start");
     }
 
     private void ClearQueues()
@@ -76,12 +79,19 @@ public class DialogManager : MonoBehaviour
             {
                 PlayNext();
 
-            } else playing = false;
+            }
+            else
+            {
+                playing = false;
+                logger.log(" - [DIALOGMANAGER] - dialog end");
+            }
         }
     }
 
     public void Stop()
     {
+        logger.log(" - [DIALOGMANAGER] - dialog has been interrupt");
+        playing = false;
         ClearQueues();
     }
 }
