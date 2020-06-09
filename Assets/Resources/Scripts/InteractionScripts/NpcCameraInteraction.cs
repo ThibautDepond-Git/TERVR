@@ -5,22 +5,45 @@ using UnityEngine;
 
 public class NpcCameraInteraction : MonoBehaviour
 {
-	public Transform player;
+	private Transform player;
 	public Transform NPC;
-    public Log logger;
+    private Log logger;
     private NpcLookInteractions npcLookAtPlayer;
-    public Menu menu;
+    private Menu menu;
+    private DialogManager dialogManager;
     Animator animator;
     public GameObject focus;
 
     public void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        dialogManager = FindObjectOfType<DialogManager>();
+        logger = GameObject.FindObjectOfType<Log>();
+        menu = FindObjectOfType<Menu>();
         animator = GetComponent<Animator>();
     }
 
     public void Update()
     {
+
         npcLookAtPlayer = menu.GetNpcLookInteractions();
+        bool dmPlaying = dialogManager.GetPlaying();
+        GameObject dmCurrentNpc = dialogManager.GetCurrentNpc();
+        if ((dmPlaying && dmCurrentNpc != null))
+        {
+            bool checkToTalk = (this.name == dmCurrentNpc.name) && dmPlaying;
+            if (checkToTalk)
+            {
+                animator.SetBool("talking", true);
+            }
+            else
+            {
+                animator.SetBool("talking", false);
+            }
+        } else
+        {
+            animator.SetBool("talking", false);
+        }
     }
 
     public void startAnimation(){

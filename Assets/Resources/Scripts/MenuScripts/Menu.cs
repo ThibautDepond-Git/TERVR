@@ -7,9 +7,16 @@ public class Menu : MonoBehaviour
 
     private NpcLookInteractions choosedNpcLookInteraction;
     
-    public DialogManager dialogManager;
-    public AudioManager audioManager;
-    public Log logger;
+    DialogManager dialogManager;
+    AudioManager audioManager;
+    Log logger;
+
+    public void Start()
+    {
+        dialogManager = FindObjectOfType<DialogManager>();
+        audioManager = FindObjectOfType<AudioManager>();
+        logger = FindObjectOfType<Log>();
+    }
 
     public void StartDialog(int scNb)
     {

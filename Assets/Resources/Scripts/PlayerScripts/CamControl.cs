@@ -7,7 +7,7 @@ public class CamControl : MonoBehaviour
     public float speedH = 2.0f;
     public float speedV = 2.0f;
 
-    public Log logger;
+    Log logger;
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
@@ -18,6 +18,7 @@ public class CamControl : MonoBehaviour
     void Start()
     {
         origin = GetComponent<Transform>();
+        logger = FindObjectOfType<Log>();
     }
 
     // Update is called once per frame

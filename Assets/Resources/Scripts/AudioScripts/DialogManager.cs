@@ -1,52 +1,57 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class DialogManager : MonoBehaviour
 {
+    private const String path = "Assets/Resources/Dialog/";
+    private const String ext = ".txt";
+
     bool playing;
     Queue<String> soundQueue;
-    Queue<int> npcQueue;
+    Queue<String> npcQueue;
+ 
+    private List<GameObject> from;
+    private GameObject currentNpc;
 
-    public GameObject[] from;
-    int currentNpc;
-
-    public AudioManager audioManager;
-    public Log logger;
+    AudioManager audioManager;
+    Log logger;
     public void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+        logger = FindObjectOfType<Log>();
+
         soundQueue = new Queue<String>();
-        npcQueue = new Queue<int>();
+        npcQueue = new Queue<String>();
         playing = false;
+        from = GameObject.FindGameObjectsWithTag("NPC").ToList();
     }
 
     public void StartDialog()
     {
-        //TODO interrompre dialogue en cours
         if (playing) return;
-
-        ClearQueues();
-        Enqueue("1", 0);
-        Enqueue("2", 1);
-        Enqueue("3", 0);
-        Enqueue("4", 1);
-        Enqueue("5", 0);
-        Enqueue("6", 1);
-        Enqueue("7", 0);
-        Enqueue("8", 1);
-        Enqueue("9", 0);
-        Enqueue("10", 1);
-        Enqueue("11", 0);
-        Enqueue("12", 1);
-        Enqueue("13", 0);
-        Enqueue("14", 1);
-        Enqueue("15", 0);
-        Enqueue("16", 1);
-
+        LoadScenario("dialog");
         playing = true;
         PlayNext();
         logger.log(" - [DIALOGMANAGER] - dialog start");
+    }
+
+    public void LoadScenario(String name)
+    {
+        ClearQueues();
+        StreamReader reader = new StreamReader(path + name + ext, false);
+        while (!reader.EndOfStream)
+        {
+            String l = reader.ReadLine();
+            if (l != null)
+            {
+                String[] line = l.Split(',');
+                Enqueue(line[0], line[1]);
+            }
+        }
     }
 
     private void ClearQueues()
@@ -55,7 +60,7 @@ public class DialogManager : MonoBehaviour
         npcQueue.Clear();
     }
 
-    private void Enqueue(String sound, int npc)
+    private void Enqueue(String sound, String npc)
     {
         soundQueue.Enqueue(sound);
         npcQueue.Enqueue(npc);
@@ -63,9 +68,9 @@ public class DialogManager : MonoBehaviour
 
     private void PlayNext()
     {
-        currentNpc = npcQueue.Dequeue();
-        from[currentNpc].GetComponentInChildren<Animator>().SetBool("talking", true);
-        float time = audioManager.PlayFrom(soundQueue.Dequeue(), from[currentNpc]);
+        String npcName = npcQueue.Dequeue();
+        currentNpc = from.Find(npc => npc.name == npcName);
+        float time = audioManager.PlayFrom(soundQueue.Dequeue(), currentNpc);
         StartCoroutine(WaitForNext(time));
     }
 
@@ -74,11 +79,9 @@ public class DialogManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         if (playing)
         {
-            from[currentNpc].GetComponentInChildren<Animator>().SetBool("talking", false);
             if (soundQueue.Count > 0)
             {
                 PlayNext();
-
             }
             else
             {
@@ -91,7 +94,18 @@ public class DialogManager : MonoBehaviour
     public void Stop()
     {
         logger.log(" - [DIALOGMANAGER] - dialog has been interrupt");
+        StopAllCoroutines();
         playing = false;
         ClearQueues();
+    }
+
+    public GameObject GetCurrentNpc()
+    {
+        return currentNpc;
+    }
+
+    public bool GetPlaying()
+    {
+        return playing;
     }
 }

@@ -24,19 +24,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Load the sound
-    void Awake()
-    {
-        foreach (Sound s in sounds)
-        {
-            s.source = gameObject.GetComponent<AudioSource>();
-            s.source.clip = s.clip;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-        }
-    }
-
-
     void PlaySound()
     {
         
